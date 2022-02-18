@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#  time for 12 hours and 59 minutes
+echo "Hour: 0"
+HOURS=1
+while [ $HOURS -le 13 ]; do
+    MINUTES=1
+    while [ $MINUTES -le 60 ]; do
+    if [ $MINUTES == 60 ]; then
+        if [ $HOURS != 13 ]; then
+	   echo "Hour: $HOURS"
+	       fi
+	       else
+	           echo "$MINUTES"
+		   fi
+		   MINUTES=$((MINUTES + 1))
+    done
+    HOURS=$((HOURS + 1))
+done
