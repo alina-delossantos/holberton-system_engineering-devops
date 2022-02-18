@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# displays Best School 10 times, but for the 9th iteration
+HOLB="Best School"
+COUNTER=1
+while [ $COUNTER -le 10 ]; do
+    echo "$HOLB"
+    if [ $COUNTER == 9 ]; then
+    echo "Hi"
+    fi
+    COUNTER=$((COUNTER + 1))
+done
