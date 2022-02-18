@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#  contents bla nla
+contents=0
+order=$(ls)
+for contents in $order
+do
+    echo "$contents" | cut -d "-" -f2
+done
