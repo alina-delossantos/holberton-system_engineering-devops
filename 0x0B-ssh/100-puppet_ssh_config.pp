@@ -1,11 +1,9 @@
-file_line { 'Declare identity file':
-  path    => '/etc/ssh/ssh_config',
-  line    => '    IdentityFile ~/.ssh/school',
-  replace => true,
+exec { 'echo "PasswordAuthentication no" >> /etc/ssh/ssh_config':
+  command => 'echo "PasswordAuthentication no" >> /etc/ssh/ssh_config',
+  path    => '/usr/local/bin/:/bin/',
 }
 
-file_line { 'Turn off passwd auth':
-  path    => '/etc/ssh/ssh_config',
-  line    => '    PasswordAuthentication no',
-  replace => true,
+exec { 'echo "IdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config':
+  command => 'echo "IdentityFile ~/.ssh/school" >> /etc/ssh/ssh_config',
+  path    => '/usr/local/bin/:/bin/',
 }
