@@ -1,3 +1,5 @@
+#connect to a server without typing a password.
+
 exec { 'echo "PasswordAuthentication no" >> /etc/ssh/ssh_config':
   command => 'echo "PasswordAuthentication no" >> /etc/ssh/ssh_config',
   path    => '/usr/local/bin/:/bin/',
