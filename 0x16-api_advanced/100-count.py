@@ -3,23 +3,23 @@
 import requests
 
 def count_words(subreddit, word_list, instances={}, after="", count=0):
-     """prints nbr of words in hot posts on a specific subreddit
+    """prints nbr of words in hot posts on a specific subreddit
 
-     Args:
-        subreddit (str): subreddit
-        word_list (list): word list
-        instances (obj): words/count
-        after (str): next page
-        count (int): results with a macth
+    Args:
+       subreddit (str): subreddit
+       word_list (list): word list
+       instances (obj): words/count
+       after (str): next page
+       count (int): results with a macth
     """
 
-     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-     headers = {
-         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
-     }
-     params = {
-         "after": after,
-         "count": count,
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
+    }
+    params = {
+        "after": after,
+        "count": count,
         "limit": 100
     }
     response = requests.get(url, headers=headers, params=params,
@@ -52,5 +52,5 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
         instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
         [print("{}: {}".format(k, v)) for k, v in instances]
     else:
-        count_words(subreddit, word_list, instances, after, count)
+        count_words(subreddit, word_list, instances, after, count) 
      
